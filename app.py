@@ -342,3 +342,4 @@ with col2:
 with st.expander("ℹ️ Comment ça marche (Logique Pine Script avec Données Alpaca)"):
     st.markdown("""**6 Signaux Confluence:** HMA(20), RSI(10), ADX(14)>=20, HA(Simple), SHA(10,10), Ichi(9,26,52).**Comptage & Étoiles:** Pine.**Source:** Alpaca API.""")
 st.caption("Scanner H1 (Alpaca). Multi-TF non actif.")
+   
