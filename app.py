@@ -66,7 +66,7 @@ def ichimoku_pine_signal(df_high, df_low, df_close, tenkan_p=9, kijun_p=26, senk
 def get_data_alpaca(symbol: str, timeframe: str = '4Hour', period_days: int = 15):
     print(f"\n--- Début get_data_alpaca: sym='{symbol}', timeframe='{timeframe}', period='{period_days}d' ---")
     try:
-        # Initialiser l'API Alpaca
+        # Initialiser l'API Alpaca avec les secrets
         api_key = st.secrets["alpaca"]["API_KEY"]
         api_secret = st.secrets["alpaca"]["API_SECRET"]
         api = tradeapi.REST(api_key, api_secret, base_url='https://paper-api.alpaca.markets', api_version='v2')
@@ -75,7 +75,7 @@ def get_data_alpaca(symbol: str, timeframe: str = '4Hour', period_days: int = 15
         end_date = datetime.now()
         start_date = end_date - timedelta(days=period_days)
 
-        # Récupérer les données historiques
+        # Récupérer les données historiques des cryptomonnaies
         bars = api.get_crypto_bars(
             symbol=symbol,
             timeframe=timeframe,
